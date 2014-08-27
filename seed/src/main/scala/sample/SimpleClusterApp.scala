@@ -7,7 +7,7 @@ import akka.actor.Props
 object SimpleClusterApp {
   def main(args: Array[String]): Unit = {
     if (args.isEmpty)
-      startup(Seq("2551", "2552", "0"))
+      startup(Seq("2551", "2552"))
     else
       startup(args)
   }

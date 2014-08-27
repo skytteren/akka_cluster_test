@@ -1,8 +1,8 @@
 
 lazy val root = (project in file(".")).
-  aggregate(master, client1, client2, backend1, backend2)
+  aggregate(seed, client1, client2, backend1, backend2)
 
-lazy val master = project in file("master")
+lazy val seed = project in file("seed")
 
 lazy val client1 = project in file("client1")
 

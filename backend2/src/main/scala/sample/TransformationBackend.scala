@@ -61,10 +61,11 @@ class TransformationBackend extends PersistentActor with ActorLogging {
     case MemberUp(m) => register(m)
   }
  
-  def register(member: Member): Unit =
+  def register(member: Member): Unit = {
     if (member.hasRole("frontend")) {
-      log.info(s"register: $member")
+      log.info(s"registering: $member")
       context.actorSelection(RootActorPath(member.address) / "user" / "frontend") !
         BackendRegistration
     }
+  }
 }

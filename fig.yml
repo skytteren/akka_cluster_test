@@ -1,0 +1,34 @@
+seed:
+  build: seed/target/docker
+  ports:
+   - "2551:2551"
+  hostname: seed
+backend1:
+  build: backend1/target/docker
+  expose:
+   - "10101"
+  links:
+   - seed:seed
+  hostname: backend1
+backend2:
+  build: backend2/target/docker
+  expose:
+   - "10101"
+  links:
+   - seed:seed
+  hostname: backend2
+client1:
+  build: client1/target/docker
+  expose:
+   - "10101"
+  links:
+   - seed:seed
+  hostname: client1
+client2:
+  build: client2/target/docker
+  expose:
+   - "10101"
+  links:
+   - seed:seed
+  hostname: client2
+
