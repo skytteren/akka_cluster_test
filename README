@@ -1,0 +1,15 @@
+Akka cluster test
+=================
+
+TO GET THIS TO WORK:
+install docker.io
+install fig.sh
+
+install sbt
+
+run 
+
+sbt docker:stage
+fig build
+fig up
+
